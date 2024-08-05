@@ -47,3 +47,12 @@ linux
 
 # Windows
 windows
+
+# Mac
+macos/**/*.swift
+
+# IOS
+ios/**/*.swift
+
+# Android
+android/app/src/main/kotlin/com/example/adv_basics/MainActivity.kt
