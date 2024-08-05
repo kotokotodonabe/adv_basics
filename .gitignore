@@ -49,10 +49,10 @@ linux
 windows
 
 # Mac
-macos/**/*.swift
+macos
 
 # IOS
-ios/**/*.swift
+ios
 
 # Android
-android/app/src/main/kotlin/com/example/adv_basics/MainActivity.kt
+android
