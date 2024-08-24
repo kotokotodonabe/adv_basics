@@ -46,6 +46,7 @@ class QuestionsSummary extends StatelessWidget {
                             child: Text(
                               data['question'] as String,
                               style: const TextStyle(
+                                color: Color.fromARGB(230, 255, 243, 243),
                                 fontSize: 14,
                                 height: 1.2,
                               ),
@@ -54,13 +55,23 @@ class QuestionsSummary extends StatelessWidget {
                           const SizedBox(
                             height: 5,
                           ),
-                          // Text(data['user_answer'] as String),
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              data['user_answer'] as String,
+                              style: const TextStyle(
+                                fontSize: 12,
+                                color: Color.fromARGB(255, 0, 162, 255),
+                              ),
+                            ),
+                          ),
                           Align(
                             alignment: Alignment.centerLeft,
                             child: Text(
                               data['correct_answer'] as String,
                               style: const TextStyle(
                                 fontSize: 12,
+                                color: Color.fromARGB(255, 0, 20, 197),
                               ),
                             ),
                           ),

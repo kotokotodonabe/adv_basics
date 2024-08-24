@@ -20,7 +20,7 @@ class ResultsScreen extends StatelessWidget {
           'question_index': i,
           'question': questions[i].text,
           'correct_answer': questions[i].answers[0],
-          'user_answer': chosenAnswer,
+          'user_answer': chosenAnswer[i],
         },
       );
     }
@@ -45,7 +45,10 @@ class ResultsScreen extends StatelessWidget {
             Text(
               'You answered $numCorrectQuestions out of $numTotalQuestions questions correctly!',
               textAlign: TextAlign.center,
-              style: const TextStyle(fontSize: 16),
+              style: const TextStyle(
+                color: Color.fromARGB(220, 255, 243, 243),
+                fontSize: 16,
+              ),
             ),
             const SizedBox(
               height: 15,
