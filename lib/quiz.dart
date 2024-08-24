@@ -4,6 +4,7 @@ import 'package:adv_basics/start_screen.dart';
 import 'package:adv_basics/questions_screen.dart';
 import 'package:adv_basics/data/questions.dart';
 import 'package:adv_basics/results_screen.dart';
+import 'package:nil/nil.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
@@ -34,9 +35,20 @@ class _QuizState extends State<Quiz> {
     }
   }
 
+  void restartQuiz() {
+    selectedAnswers.clear();
+
+    setState(() {
+      activeScreen = 'start-screen';
+    });
+  }
+
   @override
   Widget build(context) {
-    Widget screenWidget = StartScreen(switchScreen);
+    Widget screenWidget = nil;
+    if (activeScreen == 'start-screen') {
+      screenWidget = StartScreen(switchScreen);
+    }
 
     if (activeScreen == 'questions-screen') {
       screenWidget = QuestionsScreen(
@@ -47,6 +59,7 @@ class _QuizState extends State<Quiz> {
     if (activeScreen == 'results-screen') {
       screenWidget = ResultsScreen(
         chosenAnswer: selectedAnswers,
+        restartQuiz: restartQuiz,
       );
     }
 
@@ -57,7 +70,7 @@ class _QuizState extends State<Quiz> {
             gradient: LinearGradient(
               colors: [
                 Color.fromARGB(221, 89, 8, 229),
-                Color.fromARGB(172, 71, 13, 171),
+                Color.fromARGB(172, 122, 101, 157),
               ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
